@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <!-- BOOTSTRAP -->
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous"> -->
+
+    <!-- LINK TO VUE -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- AXIOSS  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js"></script>
+
+    <title>Dischi musicali</title>
+  </head>
+  <body>
+    <header>
+        <div class="container">
+          <img src="logo.png" alt="" />
+        </div>
+    </header>
+
+    <div id="root">
+      <select v-model="selected" class="" name="">
+        <option value="rock">Rock</option>
+        <option value="pop">Pop</option>
+        <option value="metal">Metal</option>
+      </select>
+
+      <ul class="cd-container container">
+        <li class="cd" v-for="disc in filteredByGenre">
+          <img :src="disc.poster" alt="">
+          <h3>{{disc.title}}</h3>
+          <span class="author">{{disc.author}}</span>
+          <span class="year">{{disc.year}}</span>
+        </li>
+      </ul>
+    </div>
+
+
+    <script src="main.js" charset="utf-8"></script>
+  </body>
+  </html>
